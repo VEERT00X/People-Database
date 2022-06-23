@@ -428,9 +428,6 @@ function main() {
 
 window.onload = function() {
 
-    const StartMenu = document.getElementById("StartMenu");
-    StartMenu.classList.remove("tableBreak");
-
     const Reload = document.getElementById("Reload");
     Reload.addEventListener("click", function() {
         window.location.reload();
@@ -462,6 +459,7 @@ function ChangeTheme() {
 
     if (theme == 0) {
         theme = 1;
+        document.getElementById("StartMenu").classList.remove("tableBreak");
         document.body.style.backgroundColor = "gray";
         document.body.style.backgroundImage = "none";
         document.getElementsByClassName("getData")[0].style.backgroundColor = "Darkgray";
@@ -477,6 +475,7 @@ function ChangeTheme() {
 
     } else if (theme == 1) {
         theme = 0;
+        document.getElementById("StartMenu").classList.add("tableBreak");
         document.body.style.backgroundColor = "transparent";
         document.body.style.backgroundImage = "url('../images/bg.gif')";
         document.getElementsByClassName("getData")[0].style.backgroundColor = "transparent";
