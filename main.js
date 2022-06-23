@@ -51,9 +51,6 @@ function Download() {
     document.body.removeChild(a);
 }
 
-
-
-
 function save() {
     var inputField = document.getElementsByClassName("inputField");
     var inputFieldValue = [];
@@ -308,7 +305,6 @@ function deleteUser(id) {
     } else { return }
 }
 
-
 function main() {
     const menuDiv = document.getElementById("tableControl");
     menuDiv.classList.remove("tableBreak");
@@ -368,6 +364,11 @@ function main() {
 
         // fill the table with the users data
         for (var i = 0; i < amountOfUsers; i++) {
+
+            if (users[i].id == undefined) {
+                users[i].id = i + 1;
+            }
+
             tableRow = document.createElement("tr");
             tableBody.appendChild(tableRow);
             tableHeader = document.createElement("td");
@@ -432,6 +433,9 @@ window.onload = function() {
         window.location.reload();
     });
 
+    const NewDatabase = document.getElementById("NewDatabase");
+    NewDatabase.addEventListener("click", main);
+
     var themeButton = document.getElementById("themeButton");
     themeButton.click();
 
@@ -450,7 +454,6 @@ window.onload = function() {
 }
 
 var theme = 0;
-
 
 function ChangeTheme() {
 
