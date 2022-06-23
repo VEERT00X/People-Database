@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./main.js"></script>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+
+
+    <div class="getData">
+
+        <input type="file" name="JFile" id="jFile" placeholder="JFile">
+        <label for="jFile" id="Label">Uplad Database</label>
+        <input type="button" value="New Database " id="NewJson">
+        <label for="NewJson " class="label50 ">New Database</label>
+        <input type="button" value="Submit" id="submit" disabled>
+        <label for="submit" class="label50" id="submitbtn">Open Database</label>
+
+    </div>
+
+    <div class="tableControl tableBreak" id="tableControl">
+
+        <input type="button" value="Download " id="Download " onClick="Download() ">
+        <input type="button" value="Reload" id="Reload">
+        <input type="button" value="New User" id="NewUser" onClick="newUser()">
+
+    </div>
+
+    <script>
+        window.onbeforeunload = function(e) {
+            return 'Are you sure you want to leave?';
+        };
+    </script>
+
+    <input type="button" value="Switch Themes" id="themeButton" onClick="ChangeTheme()">
+
+</body>
+
+</html>
