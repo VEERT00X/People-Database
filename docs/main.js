@@ -428,6 +428,9 @@ function main() {
 
 window.onload = function() {
 
+    const StartMenu = document.getElementById("StartMenu");
+    StartMenu.classList.remove("tableBreak");
+
     const Reload = document.getElementById("Reload");
     Reload.addEventListener("click", function() {
         window.location.reload();
