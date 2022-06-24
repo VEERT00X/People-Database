@@ -16,4 +16,7 @@
 
 ---
 
+Seizure warning.
+Flashing Lights and Colors.
+
 Copyright (c) 2022, VEERT00X All rights reserved.
