@@ -236,7 +236,11 @@ function newUser() {
     // get the "td" elements in the last "tr" element
     var lastTableData = lastTableRow.getElementsByTagName("td")[0];
     // get the id of the last "td" element
-    var lastTableDataId = lastTableData.innerHTML;
+    try {
+        var lastTableDataId = lastTableData.innerHTML;
+    } catch (err) {
+        var lastTableDataId = 0;
+    }
     // get the next id and make a int
     var nextId = parseInt(lastTableDataId) + 1;
 
@@ -428,13 +432,64 @@ function main() {
 
 window.onload = function() {
 
+    const NewDatabaseBtn = document.getElementById("NewDatabase");
+    NewDatabaseBtn.addEventListener("click", function() {
+        // set the input type file to '{ "Users": [] }'
+        var json = "{ \"Users\": [] }";
+        var data = JSON.parse(json);
+        var users = data.Users;
+        var amountOfUsers = Object.keys(users).length;
+        var table = document.createElement("table");
+        table.setAttribute("id", "table");
+        document.body.appendChild(table);
+        var tableBody = document.createElement("tbody");
+        table.appendChild(tableBody);
+        var tableRow = document.createElement("tr");
+        tableBody.appendChild(tableRow);
+        var tableHeader = document.createElement("th");
+        tableHeader.innerHTML = "ID";
+        tableHeader.classList.add("tableBreak");
+        tableRow.appendChild(tableHeader);
+        tableHeader = document.createElement("th");
+        tableHeader.innerHTML = "Name";
+        tableRow.appendChild(tableHeader);
+        tableHeader = document.createElement("th");
+        tableHeader.innerHTML = "Username";
+        tableRow.appendChild(tableHeader);
+        tableHeader = document.createElement("th");
+        tableHeader.innerHTML = "Email";
+        tableRow.appendChild(tableHeader);
+        tableHeader = document.createElement("th");
+        tableHeader.innerHTML = "Phone";
+        tableRow.appendChild(tableHeader);
+        tableHeader = document.createElement("th");
+        tableHeader.innerHTML = "Status";
+        tableRow.appendChild(tableHeader);
+        tableHeader = document.createElement("th");
+        tableHeader.innerHTML = "Relationship";
+        tableRow.appendChild(tableHeader);
+        tableHeader = document.createElement("th");
+        tableHeader.innerHTML = "Age";
+        tableRow.appendChild(tableHeader);
+        tableHeader = document.createElement("th");
+        tableHeader.innerHTML = "Country";
+        tableRow.appendChild(tableHeader);
+        tableHeader = document.createElement("br");
+        tableBody.appendChild(tableHeader);
+
+        var HidMenu = document.getElementsByClassName("getData")[0];
+        HidMenu.style.display = "none";
+
+        const menuDiv = document.getElementById("tableControl");
+        menuDiv.classList.remove("tableBreak");
+
+
+    });
+
     const Reload = document.getElementById("Reload");
     Reload.addEventListener("click", function() {
         window.location.reload();
     });
-
-    const NewDatabase = document.getElementById("NewDatabase");
-    NewDatabase.addEventListener("click", main);
 
     var themeButton = document.getElementById("themeButton");
     themeButton.click();
