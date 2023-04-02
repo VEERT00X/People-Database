@@ -1,3 +1,20 @@
+<h1 align="center"> Repository No Longer Maintained </h1>
+
+---
+
+- Dear users,
+
+- This repository is no longer being actively maintained. We apologize for any inconvenience this may cause.
+
+- However, we recommend that you visit [our new repository](https://github.com/VEERT00X/Database) for an up-to-date and maintained version of this project.
+
+- Thank you for your understanding.
+
+- Best regards,
+[@VEERT00X](https://github.com/VEERT00X)
+
+---
+
 <h1 align="center"> People Database </h1>
 
 <h3 align="center"> About </h3>
